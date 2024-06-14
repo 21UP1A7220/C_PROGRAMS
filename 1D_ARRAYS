@@ -1,0 +1,349 @@
+QUESTION-1
+Write a program to sum of even and odd elements in an array.
+
+ANSWER-1
+int main() {
+    int n;
+    scanf("%d",&n);
+    int a[n],i,esum=0,osum=0;
+        for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    for(i=0;i<n;i++){
+        if(a[i]%2==0)
+            esum=esum+a[i];
+        else
+            osum=osum+a[i];
+    }
+    printf("%d\n",osum);
+     printf("%d",esum);
+    return 0;
+}
+
+
+
+QUESTION-2
+Write a program to find the maximum element in an array.
+
+ANSWER-2
+int main() {
+    int n;
+    scanf("%d",&n);
+    int a[n],i,max;
+        for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    max=a[0];
+    
+    for(i=0;i<n;i++){
+        if(max<a[i])
+            max=a[i];
+        
+       
+    }
+    printf("%d\n",max);
+    return 0;
+}
+
+
+QUESTION-3
+Write a program to find whether the two arrays are the same or not. Two arrays are said to be the same if the elements of both the arrays is the same and the size of arrays is the same.
+
+ANSWER-3
+int main() {
+    int n,m,count=0;        
+    scanf("%d %d",&n,&m);
+    int a[n],b[m],i;
+    
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    
+     for(i=0;i<m;i++)
+        scanf("%d",&b[i]);
+    
+    
+    if(n==m){
+        for(i=0;i<n;i++){
+            if(a[i]==b[i]){
+                count++;
+                
+            }
+            }
+            }
+        if(count==n)
+         printf("Same");
+    else
+         printf("Not Same");
+
+    return 0;
+}
+
+
+
+
+QUESTION-4
+Write a program to sort the given array in ascending order.
+
+ANSWER-4
+int main() {
+        int n,temp=0,j;        
+    scanf("%d",&n);
+    int a[n],i;
+    
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-i-1;j++) {
+            if(a[j]>a[j+1]){
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    
+    for(i=0;i<n;i++)
+        printf("%d\n",a[i]);
+        return 0;
+}
+
+
+QUESTION-5
+Write a program to insert an element in an array at the given position. If the position where the element is to be inserted is greater than the size of the array display “Invalid Input”.
+
+ANSWER-5
+int main() {
+
+       int n;
+    scanf("%d",&n);
+    
+    int a[n+1],i,index,ele;
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    
+    scanf("%d%d",&index,&ele);
+    
+    
+    if(index>n || index<1){
+        printf("Invalid Input");
+        return 0;
+    }
+    
+    index--;
+    for(i=n;i>index;i--)
+        a[i]=a[i-1];
+    a[index]=ele;
+    
+    for(i=0;i<=n;i++)
+        printf("%d\n",a[i]);
+        return 0;
+}
+
+
+QUESTION-6
+Write a program to delete an element from the given location in an array. If index is out of range then print "Invalid Input"
+
+ANSWER-6
+int main() {
+    int n,i,index;
+    scanf("%d",&n);
+    
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&index);
+    
+    if(index>n || index<1){
+           printf("Invalid Input");
+           return 0;
+    }
+    
+    
+    index--;
+    for(i=index;i<n-1;i++) {
+            a[i]=a[i+1];
+        }
+    n--;
+    
+    for(i=0;i<n;i++)
+      printf("%d\n",a[i]);
+      return 0;
+}
+
+
+
+QUESTION-7
+A company wishes to provide cab service for their N employees. The employees have distance ranging from 0 to N-1. The company has calculated the total distance from an employee’s residence to the company, considering the path to be followed by the cab is a straight path. The distance of the side of the company is represented with a negative sign. The distance for the employees who live to the right side of the company is represented with a positive sign. The cab will be allotted a range of distance. The company wishes to find the distance for the employees who live within the particular distance range. Write an algorithm to find the distance for the employees who live within the distance range.
+
+ANSWER-7
+int main() {
+    int n,sr,er;
+    scanf("%d %d %d\n",&n,&sr,&er);
+    int a[n-1],i;
+    for(i=0;i<n;i++)
+        scanf("%d ",&a[i]);
+    
+    for(i=0;i<n;i++){
+       if(a[i]>=sr && a[i]<=er)
+       {
+           printf("%d ",a[i]);
+       }
+    }
+         return 0;
+}
+
+QUESTION-8
+In an online maths tutorial a student is given a list of N numbers. From this list, the student is required to sum each element in the list such that the ith element in the output list will be equal to the sum to the first element until the ith element in the list.
+
+ANSWER-8
+int main() {
+    int n;
+    scanf("%d",&n);
+    
+    int a[n],i;
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    
+    for(i=1;i<n;i++){
+        a[i]=a[i-1]+a[i];
+    }
+    
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+   return 0;
+}
+
+QUESTION-9
+Write a program to calculate and return the sum of distances between the adjacent numbers In an array of positive integers.
+
+ANSWER-9
+int main() {
+    int n,sum=0;
+    scanf("%d",&n);
+    
+    int a[n],i;
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    
+    for(i=0;i<n-1;i++){
+        
+        
+        sum=sum+abs(a[i]-a[i+1]);     
+        
+    }
+    printf("%d",sum);
+    return 0;
+}
+
+
+QUESTION-10
+Andrew is a stock trader who trades in N selected stocks. He has calculated the relative stock price changes in the N stocks from the previous day stock prices. Now, his lucky number is K, so he wishes to invest in the particular stock that has Kth smallest relative stock value. Write an algorithm for Andrew to find the Kth smallest stock price out of the selected N stocks.
+
+ANSWER-10
+int main() {
+    int n,k;
+    scanf("%d %d\n",&n,&k);
+    int a[n],i,j,temp=0;
+    for(i=0;i<n;i++)
+        scanf("%d ",&a[i]);
+    
+    
+    
+     for(i=0;i<n-1;i++){
+        for(j=0;j<n-i-1;j++) {
+            if(a[j]>a[j+1]){
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    
+    k--;
+    
+    for(i=k;i<=k;i++){
+    
+        
+            printf("%d ",a[i]);
+    }
+    
+     return 0;
+}
+
+
+QUESTION-11
+
+
+ANSWER-11
+
+
+QUESTION-12
+The garments company Apparel wishes to open outlets at various locations. The company shortlisted several plots in these locations and wishes to select only plots that are square- shaped. Write an algorithm to help Apparel find the number of plots that it can select for its outlets.
+
+ANSWER-12
+
+int main() {
+    int n,count,root;
+    scanf("%d",&n);
+    
+    int a[n],i;
+    for(i=0;i<n;i++)
+        scanf("%d ",&a[i]);
+    
+    for(i=0,count=0;i<n;i++){
+         root = (int)sqrt(a[i]);
+    if(root * root == a[i]){
+        count++;
+    }
+        
+        
+    }
+    
+    printf("%d",count);
+    return 0;
+}
+
+
+QUESTION-13
+
+
+ANSWER-13
+
+
+QUESTION-14
+
+
+ANSWER-14
+
+
+QUESTION-15
+A party has been organised on cruise. The party is organised for a limited time(T). The number of guests entering (E[i]) and leaving (L[i]) the party at every hour is represented as elements of the array. The task is to find the maximum number of guests present on the cruise at any given instance within T hours.
+
+ANSWER-15
+int main() {
+    int n,sum,s=0;
+    scanf("%d",&n);
+    int e[n],l[n],i;
+    
+    for(i=0;i<n;i++)
+        scanf("%d",&e[i]);
+    
+    for(i=0;i<n;i++)
+        scanf("%d",&l[i]);
+    
+    s=e[0]-l[0];
+         
+    for(i=0,sum=0;i<n;i++){
+        sum=sum+e[i]-l[i];
+        
+        if(s<sum){
+           s=sum;
+        }
+        
+    }
+    printf("%d",s);
+        
+    return 0;
+}
+
+
