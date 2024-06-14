@@ -1,0 +1,133 @@
+QUESTION-1
+Each Sunday, a newspaper agency sells x copies of a certain newspaper for Rs.a per copy. The cost to the agency of each newspaper is Rs.b. The agency pays a fixed cost for storage, delivery and so on of Rs.100 per Sunday. The newspaper agency wants to calculate the profit obtained on Sundays. Can you please help them out by writing a program to compute the profit given x, a and b.
+ANSWER-1
+int main() {
+    int x,a,b,p;
+    scanf("%d %d %d",&x,&a,&b);
+    p=(x*(a-b))-100;
+    printf("%d",p);
+return 0;
+}
+
+
+QUESTION-2
+Write a program to get a float value from the user and display it in the below-mentioned format. HINT: Use ceil() and floor() functions.
+ANSWER-2
+int main(){
+ float a;
+    scanf("%f",&a);
+    printf("%d\n%.1f\n%.1f\n",(int)a,ceil(a),floor(a));
+    
+    return 0;
+}
+
+QUESTION-3
+There was a large ground in center of the city which is rectangular in shape. The Corporation decides to build a Cricket stadium in the area for school and college students, But the area was used as a car parking zone. In order to protect the land from using as an unauthorized parking zone , the corporation wanted to protect the stadium by building a fence. In order to help the workers to build a fence, they planned to place a thick rope around the ground. They wanted to buy only the exact length of the rope that is needed. They also wanted to cover the entire ground with a carpet during rainy season. They wanted to buy only the exact quantity of carpet that is needed. They requested your help. Can you please help them by writing a program to find the exact length of the rope and the exact quantity of carpet that is required?
+ANSWER-3
+int main() {
+    int l,b,p,a;
+    scanf("%d %d",&l,&b);
+    a=l*b;
+    p=2*(l+b);
+    printf("%d\n%d",p,a);
+  
+    return 0;
+}
+
+
+QUESTION-4
+'Artagnan joined the group of 3 Musketeers and now their group is called four Musketeers. Meanwhile, d'Artagnan also moved to a new house in the same locality nearby to the other three. Currently, the houses of Athos, Porthos and Aramis are located in the shape of a triangle. When the three musketeers asked d'Artagnan about the location of his house, he said that his house is equidistant from the houses of the other 3. Can you please help them find out the location of the house? Given the 3 locations {(x1,y1), (x2,y2) and (x3,y3)} of a triangle, write a program to determine the point which is equidistant from all the 3 points.
+
+ANSWER-4
+int main() {
+    int x1,y1,x2,y2,x3,y3;
+    scanf("%d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3);
+    printf("%.1f\n%.1f",(float)(x1+x2+x3)/3,(float)(y1+y2+y3)/3);
+
+    return 0;
+}
+
+
+QUESTION-5
+Though there have been more successful pirates, Blackbeard is one of the best-known and widely-feared of his time. He commanded four ships and had a pirate army of 300 at the height of his career and defeated the famous warship, HMS “Scarborough” in sea-battle. He was known for barreling into battle clutching two swords with several knives and pistols at the ready. He captured over forty merchant ships in the Caribbean and without flinching killed many prisoners. Now, Blackbeard and his three pirates found a treasure of gold coins. Long Ben too joined them. They decided to share the treasure. Blackbeard agreed to give x% share for Long Ben. He then decided to take y% share from the remaining treasure. His other pirates will share the remaining gold coins equally. Write a program to compute their share's.
+
+ANSWER-5
+int main() {
+    int n,l,b,ls,bs,ps;
+    scanf("%d %d %d",&n,&l,&b);
+    ls=(n*l)/100;
+    bs=((n-ls)*b)/100;
+    ps=(n-(ls+bs))/3;  
+    printf("%d\n%d\n%d\n",ls,bs,ps);
+
+    return 0;
+}
+
+
+QUESTION-6
+Sheela has three things in her bag. She wants to compute the area of 3 things but 3 things are in different shapes. The three things are in a square shape, rectangular shape, and circular shape respectively. Write a program to help Sheela to calculate the area of different shapes.
+
+ANSWER-6
+int main() {
+    int s,l,b;
+    float r,a;
+    scanf("%d %d %d %f",&s,&l,&b,&r);
+    a=3.14*r*r;
+    printf("%d\n%d\n%.2f",s*s,l*b,a);
+  
+    return 0;
+}
+
+
+QUESTION-7
+During the Physical Education hour, PT sir has decided to conduct some team games. He wants to split the students in the class into equal-sized teams. In some cases, there may be some students who are left out from teams and he wanted to use the left out, students, to assist him in conducting the team games. For instance, if there are 50 students in the class and if the class has to be divided into 7 equal-sized teams, 7 students will be there in each team and 1 student will be left out. PT sir asks your help to automate this team splitting task. Can you please help him out?
+
+ANSWER-7
+int main() {
+    
+    int s,t,l,e;
+    scanf("%d %d",&s,&t);
+    l=s%t;
+    e=s/t;
+    printf("The number of students in each team is %d and left out is %d",e,l);
+
+    return 0;
+}
+
+
+QUESTION-8
+Alice wanted to start a business and she was looking for a venture capitalist. Through her friend Bob, she met the owner of a construction company who is interested to invest in an emerging business. Looking at the business proposal, the owner was very much impressed with Alice's work. So he decided to invest in Alice's business and hence gave a green signal to go ahead with the project. Alice bought Rs.X for a period of Y years from the owner at R% interest per annum. Find the rate of interest and the total amount to be given by Alice to the owner. The owner impressed by proper repayment of the financed amount decides to give a special offer of 2% discount on the total interest at the end of the settlement. Find the amount given back by Alice and also find the total amount. (Note: All rupee values should be in two decimal points).
+
+ANSWER-8
+int main() {
+    int pa,i,y;
+    scanf("%d %d %d",&pa,&i,&y);
+    float in,a,d,fs;
+    in=(pa*i*y)/100;
+    printf("%.2f\n",in);
+    a=pa+in;
+    printf("%.2f\n",a);
+    d=in*0.02;
+    printf("%.2f\n",d);
+    fs=a-d;
+    printf("%.2f\n",fs);
+      
+    return 0;
+}
+
+
+QUESTION-9
+Ajay, Binoy, and Chandru were very close friends at school. They were very good in Mathematics and they were the pet students of Emily Mam. Their gang was known as 3-idiots. Ajay, Binoy, and Chandru live in the same locality. A new student Dinesh joins their class and he wanted to be friends with them. He asked Binoy about his house address. Binoy wanted to test Dinesh's mathematical skills. Binoy told Dinesh that his house is at the midpoint of the line joining Ajay's house and Chandru's house. Dinesh was puzzled. Can you help Dinesh out? Given the coordinates of the 2 endpoints of a line (x1,y1) and (x2,y2), write a program to find the midpoint of the line.
+
+ANSWER-9
+int main() {
+    int x1,y1,x2,y2;
+    float a,b;
+    scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
+    a=(x1+x2)/2.0;
+    b=(y1+y2)/2.0;
+    printf("Binoy's house is located at (%.1f,%.1f)",a,b);
+      
+    return 0;
+}
+
