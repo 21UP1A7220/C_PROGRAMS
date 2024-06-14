@@ -1,0 +1,228 @@
+QUESTION-1
+You went on a tour to Ooty with your friends. As a part of the tour, you went boating with them. For the boat to remain stable, the number of people on one boat is restricted based on the weight of the people. You find that the boatman who is sailing your boat is so much greedy of money. For earning more, he takes too many people to travel in the boat at a time. So you want to check how many people can travel in the boat at a time so that the boat will not drown. Calculate the weight by considering the number of adults and number of children. Assume that an adult weighs 75 kg and children weigh 30 kg each. If the weight is normal, display Boat is stable, else display Boat will drown.
+
+ANSWER-1
+int main() {
+    int w,a,c,sum;
+    scanf("%d %d %d",&w,&a,&c);
+    sum=((a*75)+(c*30));
+    if(sum<=w){
+        printf("Boat is stable");
+    }
+    else{
+        printf("Boat will drown");
+    }
+  
+    return 0;
+}
+
+
+
+QUESTION-2
+Write a program to find whether a given character is an uppercase, lowercase, number or symbol. If it is an alphabet find whether it is an Uppercase or Lowercase. If it is a number display Number else display Symbol.
+
+ANSWER-2
+int main() {
+    char ch;
+    scanf("%c",&ch);
+    if(ch>=65 && ch<=90){
+        printf("Upper");
+    }
+    else if(ch>=97 && ch<=122){
+        printf("Lower");
+    }
+     else if(ch>=48 && ch<=57){
+        printf("Number");
+    }
+    else{
+        printf("Symbol");
+    }
+   
+    return 0;
+}
+
+
+QUESTION-3
+Accept total number of participants in class. A group of four divisions has to be created from registered participants. Total no of participants “P” 100>=p<=200 Note: If number of participants entered by user is less than 100 or greater than 200 display “INVALID INPUT” and quit.
+
+ANSWER-3
+int main() {
+    int p,n,l;
+    scanf("%d",&p);
+    if(p>=100 && p<=200){
+        n=p/4;
+        l=p-(n*3);
+        printf("%d\n%d\n%d\n%d\n",n,n,n,l);
+    }
+    else{
+        printf("INVALID INPUT");
+    }
+
+    return 0;
+}
+
+QUESTION-4
+Accept two integer values from the user and return their product. If the product is greater than 1000, then return their sum
+
+ANSWER-4
+int main() {
+    int a,b,p;
+    scanf("%d\n%d\n",&a,&b);
+    p=a*b;
+    
+    if(p>1000){
+        printf("%d",(a+b));
+    }
+    else{
+        printf("%d",p);
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
+
+QUESTION-5
+Write a program to return the nearest 10 multiple of any given number
+
+ANSWER-5
+int main() {
+    int n,r;
+    scanf("%d",&n);
+    r=n%10;
+    if(r>=5){
+       printf("%d",(n+10-r));
+    }
+    else{
+        printf("%d",(n-r)); 
+    }
+
+     return 0;
+}
+
+
+
+QUESTION-6
+There is a practice of showing a cinema in the auditorium of a college on a cinema day. A cinema day is a day where the sum of Day(D), Month(M), Year(Y)should be divisible by product of 3 and 4. On that particular day the total number of students in the hostel should be greater than 50 but less than 100. Write a program to find whether the given day is cinema day or not.
+
+ANSWER-6
+int main() {
+    int d,m,y,s,sum;
+    scanf("%d\n%d\n%d\n%d\n",&d,&m,&y,&s);
+    sum=d+m+y;
+    if(s>50 && s<100 && sum%12==0){
+        printf("Cinema Day");
+    }
+    else{
+        printf("Not a Cinema Day");
+    }
+   
+    return 0;
+}
+
+
+QUESTION-7
+Write a program to check whether the person is eligible to donate blood. Age must be 18 or above. Weight must be 45 or above. Hemoglobin must be 5.5 or above.
+
+ANSWER-7
+int main() {
+    int a,w;
+    float h;
+    scanf("%d\n%d\n%f",&a,&w,&h);
+    if(a>=18 && w>=45 && h>=5.5){
+        printf("He or She can donate blood");
+    }
+    else{
+        printf("He or She unable to donate blood");
+    }
+ 
+    return 0;
+}
+
+
+QUESTION-8
+“VideoShare” is an online video sharing platform. The company has decided to rate its users channels based on the sum total of the number of views received online and the subscribers. The sum total is reffered to as user points. The rating will be given according to the below charts:
+
+User points ratings: 30-50 Average 51-60 Good 61-80 Excellent 81-100 Outstanding
+
+The whole process is automated and it can be carried out by the company’s system.
+
+ANSWER-8
+int main() {
+    int u;
+    scanf("%d",&u);
+    if(u>=81 && u<=100){
+        printf("Outstanding");
+    }
+    else if(u>=61 && u<=80){
+        printf("Excellent");
+    }
+    else if(u>=51 && u<=60){
+        printf("Good");
+    }
+    else if(u>=30 && u<=50){
+        printf("Average");
+    }
+    else{
+        printf("Invalid Input");
+    }
+    
+    return 0;
+}
+
+
+QUESTION-9
+Mr.Kumar went to purchase stationary items for his office. He asked the shopkeeper for a discount. The shopkeeper said that if he purchases more than 200 quantity of the item, then a discount of 20% can be applied on the total bill amount, excluding the GST. Get the Quantity and price per item as an input and calculate and tell whether Mr.Kumar is eligible for the discount and what would be the net amount he has to pay after the discount. Take the GST at 18%. Net Amount = Total bill amount after discount + GST
+
+ANSWER-9
+ int q,p,ta;
+    float gst,net,tad,afd;
+    scanf("%d\n%d\n",&q,&p);
+    ta=q*p;
+    printf("Quantity Ordered %d\n",q);
+    printf("Price per item is Rs.%d\n",p);
+    printf("Total Amount = Rs.%d\n",ta);
+    if(q>200){
+                
+              tad=ta*0.2;
+              afd=ta-tad;
+              printf("Discount Earned = Rs.%.1f\n",tad);
+              printf("Amount after Discount - Rs.%.1f\n",afd);
+              gst=afd*0.18;
+              printf("GST - Rs.%.1f\n",gst); 
+              net=afd+gst;
+              printf("Net Amount Payable is Rs.%.1f",net);
+    }
+    else{
+        gst=ta*0.18;  
+        net=ta+gst;
+        printf("GST - Rs.%.1f\n",gst);
+        printf("Net Amount Payable is Rs.%.1f",net);   
+    }
+       return 0;
+}
+
+
+QUESTION-10
+Electricity board has decided to charge rupees based on the units consumed by a particular home. If the units consumed is less than or equal to 200, the cost for one unit is 0.5. If the unit is less than or equal to 400, the cost for one unit is 0.65 and Rs.100 extra charge. If the unit is less than or equal to 600, the cost for one unit is 0.80 and Rs.200 extra charge. If the unit is greater than 600 the cost for one unit is 1.25 and Rs.425 extra charge. You need to now calculate the electricity bill based on the units consumed (given input).
+
+ANSWER-10
+int main() {
+    int u;
+    scanf("%d",&u);
+    if(u<=200){
+        printf("Rs.%.0f",u*0.5);
+    }
+   else if(u<=400){
+        printf("Rs.%.0f",((u*0.65)+100));
+    }
+    else if(u<=600){
+        printf("Rs.%.0f",((u*0.80)+200));
+    }
+     else{
+        printf("Rs.%.0f",((u*1.25)+425));
+    }
+
+   return 0;
+}
+
+
